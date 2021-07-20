@@ -1,8 +1,11 @@
 package com.w4eret1ckrtb1tch.app28
 
 import android.os.Bundle
+import android.view.Gravity
+import android.view.animation.AccelerateInterpolator
 import android.widget.Button
 import android.widget.FrameLayout
+import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.transition.*
@@ -12,29 +15,45 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // TODO: 20.07.2021 28.2 Transition Framework
 
         //контейнеры для сцен
         val rootScene1: FrameLayout = findViewById(R.id.root_scene_1)
         val rootScene2: ConstraintLayout = findViewById(R.id.root_scene_2)
 
+
         //создание сцен XML
         val scene1 = Scene.getSceneForLayout(rootScene1, R.layout.scene1, this)
         val scene2 = Scene.getSceneForLayout(rootScene1, R.layout.scene2, this)
+        val scene4 = Scene.getSceneForLayout(rootScene1, R.layout.scene4, this)
 
-        val button3:Button = findViewById(R.id.button3)
+        val button3: Button = findViewById(R.id.button3)
 
         //создание сцен код
-        val scene3 = Scene(rootScene2,button3)
+        val scene3 = Scene(rootScene2, button3)
         //создание Transition XML
-        val transition3:Transition = TransitionInflater.from(this).inflateTransition(R.transition.transition_fade_slide)
+        val transition3: Transition =
+            TransitionInflater.from(this).inflateTransition(R.transition.transition_fade_slide)
         //создание Transition код
-        val transition4:Transition = Slide(android.view.Gravity.TOP)
-        transition4.duration = 1000
+        val transitionSlide = Slide().apply {
+            slideEdge = Gravity.TOP
+            duration = 1000
+            interpolator = AccelerateInterpolator()
+
+        }
+
+        val transitionFade = Fade().apply { duration = 1000 }
+
+        //набор Transition
+        val transitionSet = TransitionSet()
+        transitionSet.addTransition(transitionSlide)
+        transitionSet.addTransition(transitionFade)
+        transitionSet.ordering = TransitionSet.ORDERING_TOGETHER
 
 
         //Transition manager через код
         val transitionManager4 = TransitionManager()
-        transitionManager4.setTransition(scene3,transition4)
+        transitionManager4.setTransition(scene3, transitionSlide)
 
         //Transition manager через XML
         val transitionManager =
@@ -60,9 +79,9 @@ class MainActivity : AppCompatActivity() {
 
 
 
-            //вызов сцены
+        //вызов сцены
         button3.setOnClickListener {
-                TransitionManager.go(scene3,transition4)
+            TransitionManager.go(scene4)
 
         }
     }

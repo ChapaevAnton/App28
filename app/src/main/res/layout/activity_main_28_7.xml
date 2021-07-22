@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_28_7"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E91E63">
+
+
+    <ImageView
+        android:id="@+id/title_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="64dp"
+        android:src="@drawable/android"
+        android:transitionName="titleImage"
+        app:layout_constraintBottom_toTopOf="@+id/img_set1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/desc_text"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.443" />
+
+    <TextView
+        android:id="@+id/desc_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="156dp"
+        android:text="activity 1"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:transitionName="descText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/title_image"
+        app:layout_constraintTop_toTopOf="@+id/title_image" />
+
+
+    <ImageView
+        android:transitionName="setImage"
+        android:id="@+id/img_set1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginBottom="34dp"
+        android:src="@drawable/robe"
+        app:layout_constraintBottom_toTopOf="@+id/img_set3"
+        app:layout_constraintEnd_toStartOf="@+id/img_set4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_image" />
+
+    <ImageView
+        android:transitionName="setImage"
+        android:id="@+id/img_set2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="129dp"
+        android:layout_marginBottom="53dp"
+        android:src="@drawable/robot_golem"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_set3"
+        app:layout_constraintTop_toBottomOf="@+id/img_set4" />
+
+    <ImageView
+        android:transitionName="setImage"
+        android:id="@+id/img_set3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginBottom="53dp"
+        android:src="@drawable/greek"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/img_set2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_set1" />
+
+    <ImageView
+        android:transitionName="setImage"
+        android:id="@+id/img_set4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="444dp"
+        android:layout_marginEnd="129dp"
+        android:layout_marginBottom="34dp"
+        android:src="@drawable/viking"
+        app:layout_constraintBottom_toTopOf="@+id/img_set2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_set1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

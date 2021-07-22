@@ -97,6 +97,7 @@ class MainActivity_28_4 : AppCompatActivity() {
         })
 
 
+
         img.setOnClickListener {
             //ChangeClipBounds
 //            TransitionManager.beginDelayedTransition(root, ChangeClipBounds())

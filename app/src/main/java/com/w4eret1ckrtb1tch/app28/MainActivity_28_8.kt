@@ -26,6 +26,7 @@ class MainActivity_28_8 : AppCompatActivity() {
         val pageAdapter = PageFragmentAdapter(fragmentManager,lifecycle)
         val viewPager:ViewPager2 = findViewById(R.id.view_pager_fragment)
         viewPager.adapter = pageAdapter
+        viewPager.setPageTransformer(ZoomPageTransformer())
 
     }
 }
